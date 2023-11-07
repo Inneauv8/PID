@@ -17,7 +17,7 @@ namespace PID {
         float Out;          // Valeur de sortie
         float integralCutOff;
 
-        valeursPID init(float Kp, float Ki, float Kd, float integralCutOff = INFINITY) {
+        static valeursPID create(float Kp, float Ki, float Kd, float integralCutOff = INFINITY) {
             valeursPID pid = {};
             pid.set(Kp, Ki, Kd, integralCutOff);
             return pid;
