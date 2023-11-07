@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['kd_0',['Kd',['../structPID_1_1valeursPID.html#a9aaba0e55287e8f2bcc993fb3c2b1cb6',1,'PID::valeursPID']]],
-  ['ki_1',['Ki',['../structPID_1_1valeursPID.html#aff30595e3cb3bbd2667bc19b791167bf',1,'PID::valeursPID']]],
-  ['kp_2',['Kp',['../structPID_1_1valeursPID.html#ac34dd9493520aa006a5a83870f6c2194',1,'PID::valeursPID']]]
+  ['initialtime_0',['initialTime',['../structPID_1_1valeursPID.html#a758bdd766e087a6b2be3400019548314',1,'PID::valeursPID']]],
+  ['integral_1',['integral',['../structPID_1_1valeursPID.html#a65b023357729b3b4422afe8932898226',1,'PID::valeursPID']]],
+  ['integralcutoff_2',['integralCutOff',['../structPID_1_1valeursPID.html#aaf69610ac0b1bb41656e05f33d5537f7',1,'PID::valeursPID']]]
 ];
