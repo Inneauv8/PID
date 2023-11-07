@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "ikopsuv",
   1: "v",
   2: "p",
-  3: "uv",
+  3: "isuv",
   4: "ikops"
 };
 
