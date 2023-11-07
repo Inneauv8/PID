@@ -1,0 +1,14 @@
+{
+    "name":"PID",
+    "description":"Library for PID management",
+    "keywords":"pid",
+    "authors":
+    [
+      {
+        "name": "Mathieu Durand",
+        "maintainer": true
+      }
+  
+    ],
+    "version": "1.0.0"
+  }
