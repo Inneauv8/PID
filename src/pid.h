@@ -36,7 +36,7 @@ namespace PID {
             float derivative = (error - previous_error) / dt;
 
             // Calculate the control output
-            Out = Kp * error + Ki * integral + Kd * derivative;
+            Out = (Kp * error) + (Ki * integral) + (Kd * derivative);
 
             // Store the current time for the next update
             initialTime = currentTime;
