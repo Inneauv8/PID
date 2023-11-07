@@ -16,6 +16,20 @@ namespace PID {
         float previous_error;  // Previous error value
         float Out;          // Valeur de sortie
         float integralCutOff;
+
+        valeursPID init(float Kp, float Ki, float Kd, float integralCutOff = INFINITY) {
+            valeursPID pid = {};
+            pid.set(Kp, Ki, Kd, integralCutOff);
+            return pid;
+        }
+
+        void set(float Kp, float Ki, float Kd, float integralCutOff = INFINITY) {
+            this->Kp = Kp;
+            this->Ki = Ki;
+            this->Kd = Kd;
+            this->integralCutOff = integralCutOff;
+        }
+
         float update() {
             unsigned long currentTime = micros();  // Get current time in milliseconds
 
@@ -26,7 +40,7 @@ namespace PID {
             float error = Sp - Pv;
 
             // Update the integral term
-            if (abs(error) <= integralCutOff) {
+            if (abs(error) < integralCutOff) {
                 integral += error * dt;
             } else {
                 integral = 0;
