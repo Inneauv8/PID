@@ -47,7 +47,7 @@ namespace PID {
 
             // Make sure dt isn't too small or too large
             const float epsilon_min = 0.000005;
-            const float epsilon_max = 5000000;
+            const float epsilon_max = 5;
             if (dt < epsilon_min || dt > epsilon_max || dt == 0) {
                 return Out;
             }
