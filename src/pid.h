@@ -2,6 +2,7 @@
 #define PID_H
 
 #include <Arduino.h>
+#include <float.h>
 
 namespace PID {
         struct valeursPID {
@@ -39,12 +40,27 @@ namespace PID {
             // Calculate the error
             float error = Sp - Pv;
 
+            // Make not NaN or Infinite values are introduced
+            if (!isfinite(error) || !isfinite(dt)) {
+                return Out;
+            }
+
+            // Make sure dt isn't too small or too large
+            const float epsilon_min = 0.000005;
+            const float epsilon_max = 5000000;
+            if (dt < epsilon_min || dt > epsilon_max || dt == 0) {
+                return Out;
+            }
+
             // Update the integral term
             if (abs(error) < integralCutOff) {
                 integral += error * dt;
             } else {
                 integral = 0;
             }
+
+            // Make sure it doesn't overflow
+            integral = constrain(integral, -FLT_MAX, FLT_MAX);
 
             // Calculate the derivative term
             float derivative = (error - previous_error) / dt;
